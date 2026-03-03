@@ -83,6 +83,19 @@
                 50
             </default>
         </short>
-
+        <short>
+            <name>
+                highThreshold
+            </name>
+            <label>
+                High Threshold
+            </label>
+            <description>
+                Highest range of pixel intensity that is considered to be inside the threshold
+            </description>
+            <default>
+                100
+            </default>
+        </short>
     </parameters>
 </executable>
