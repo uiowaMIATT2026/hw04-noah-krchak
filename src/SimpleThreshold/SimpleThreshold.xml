@@ -12,10 +12,10 @@
 
     <parameters>
         <label>
-            Threshold Parameters
+            Threshold Meta Parameters
         </label>
         <description>
-            Parameters for..
+            Parameters for changing the threshold range
         </description>
 
         <double>
@@ -65,5 +65,10 @@
         </image>
     </parameters>
 
-    <-- Other parameters here -->
+
+    <parameters>
+        <label>Threshold Parameters</label>
+        <description>FILL OUT LATER</description>
+
+    </parameters>
 </executable>
