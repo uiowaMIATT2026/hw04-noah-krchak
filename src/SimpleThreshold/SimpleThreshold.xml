@@ -97,5 +97,19 @@
                 100
             </default>
         </short>
+        <short>
+            <name>
+                outsideValue
+            </name>
+            <label>
+                Outside Value
+            </label>
+            <description>
+                Value to set all pixels to that are outside the threshold range
+            </description>
+            <default>
+                159
+            </default>
+        </short>
     </parameters>
 </executable>
