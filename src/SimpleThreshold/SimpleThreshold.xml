@@ -69,6 +69,20 @@
     <parameters>
         <label>Threshold Parameters</label>
         <description>FILL OUT LATER</description>
+        <short>
+            <name>
+                lowThreshold
+            </name>
+            <label>
+                Low Threshold
+            </label>
+            <description>
+                Lowest range of pixel intensity that is considered to be inside the threshold
+            </description>
+            <default>
+                50
+            </default>
+        </short>
 
     </parameters>
 </executable>
