@@ -37,8 +37,7 @@ int main (int argc, char * argv[])
 
 
 
-  std::cout << "The number of iterations is: " << numberOfIterations
-            << std::endl;
+
   std::cout << "The input volume is: " << input << std::endl;
   std::cout << "The output volume is: " << output << std::endl;
 
