@@ -1,1 +1,1 @@
-# How does sigma affect the smoothing and loss of image resolution?
+# How does the edge response change as sigma1 and sigma2 vary?
