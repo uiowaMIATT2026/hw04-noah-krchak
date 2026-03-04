@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <executable>
     <category>MIATT.HW04.nkrchak</category>
-    <title>GaussianLPF_nkrchak</title>
+    <title>DOG_nkrchak</title>
     <description>
         Performs Difference of Gaussians on the input image using two Gaussian low-pass filters
     </description>
@@ -12,7 +12,7 @@
 
     <parameters>
         <label>
-            Threshold Meta Parameters
+            Difference of Gaussians Meta Parameters
         </label>
         <description>
             Parameters for changing the threshold range
