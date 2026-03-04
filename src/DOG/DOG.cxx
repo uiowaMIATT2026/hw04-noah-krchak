@@ -43,6 +43,11 @@ int main (int argc, char * argv[])
   std::cout << "The output volume is: " << output << std::endl;
 
 
+  if(sigma1 == sigma2)
+  {
+    std::cerr << "Error: Sigma 1 and Sigma 2 cannot be equal" << std::endl;
+    return EXIT_FAILURE;
+  }
   try{
      typename ReaderType::Pointer imageReader = ReaderType::New();
      typename WriterType::Pointer imageWriter = WriterType::New();
