@@ -69,7 +69,7 @@
     <parameters>
         <label>Threshold Parameters</label>
         <description>FILL OUT LATER</description>
-        <short>
+        <integer>
             <name>
                 lowThreshold
             </name>
@@ -82,8 +82,16 @@
             <default>
                 50
             </default>
-        </short>
-        <short>
+            <constraints>
+                <minimum>
+                    -32768
+                </minimum>
+                <maximum>
+                    32767
+                </maximum>
+            </constraints>
+        </integer>
+        <integer>
             <name>
                 highThreshold
             </name>
@@ -96,8 +104,16 @@
             <default>
                 100
             </default>
-        </short>
-        <short>
+            <constraints>
+                <minimum>
+                    -32768
+                </minimum>
+                <maximum>
+                    32767
+                </maximum>
+            </constraints>
+        </integer>
+        <integer>
             <name>
                 outsideValue
             </name>
@@ -110,8 +126,16 @@
             <default>
                 150
             </default>
-        </short>
-        <short>
+            <constraints>
+                <minimum>
+                    -32768
+                </minimum>
+                <maximum>
+                    32767
+                </maximum>
+            </constraints>
+        </integer>
+        <integer>
             <name>
                 insideValue
             </name>
@@ -124,6 +148,14 @@
             <default>
                 200
             </default>
-        </short>
+            <constraints>
+                <minimum>
+                    -32768
+                </minimum>
+                <maximum>
+                    32767
+                </maximum>
+            </constraints>
+        </integer>
     </parameters>
 </executable>
