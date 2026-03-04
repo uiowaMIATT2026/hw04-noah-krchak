@@ -68,7 +68,7 @@
 
     <parameters>
         <label>Threshold Parameters</label>
-        <description>FILL OUT LATER</description>
+        <description>Parameters for the binary threshold filter</description>
         <integer>
             <name>
                 lowThreshold
