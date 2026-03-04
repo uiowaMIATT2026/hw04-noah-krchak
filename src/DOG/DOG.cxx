@@ -6,19 +6,20 @@
 #include "itkRecursiveGaussianImageFilter.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
-using PixelType =  short;
+using InputPixelType =  short;
+using OutputPixelType = unsigned char;
 constexpr int Dim = 3;
 
 // I/O Image Types
-using InputImageType = itk::Image<PixelType, Dim>;
-using OutputImageType = itk::Image<PixelType, Dim>;
+using InputImageType = itk::Image<InputPixelType, Dim>;
+using OutputImageType = itk::Image<OutputPixelType, Dim>;
 
 // Reader and Writer Types
 using ReaderType = itk::ImageFileReader<InputImageType>;
 using WriterType = itk::ImageFileWriter<OutputImageType>;
 
 // Binary Threshold Filter Type
-using RecursiveGaussianFilterType = itk::RecursiveGaussianImageFilter<InputImageType, OutputImageType>;
+using RecursiveGaussianFilterType = itk::RecursiveGaussianImageFilter<InputImageType, InputImageType>;
 
 int main (int argc, char * argv[])
 {
@@ -40,16 +41,20 @@ int main (int argc, char * argv[])
      imageWriter->SetFileName(output);
 
      typename InputImageType::Pointer inputImage = imageReader->GetOutput();
-     typename RecursiveGaussianFilterType::Pointer gaussianLPF = RecursiveGaussianFilterType::New();
-
+     typename RecursiveGaussianFilterType::Pointer gaussianLPF1 = RecursiveGaussianFilterType::New();
+     typename RecursiveGaussianFilterType::Pointer gaussianLPF2 = RecursiveGaussianFilterType::New();
      //Set input and sigma for Gaussian LPF
-     gaussianLPF->SetInput(inputImage);
-     gaussianLPF->SetSigma(sigma1);
+     gaussianLPF1->SetInput(inputImage);
+     gaussianLPF1->SetSigma(sigma1);
 
-     typename OutputImageType::Pointer outputImage = gaussianLPF->GetOutput();
+     gaussianLPF2->SetInput(inputImage);
+     gaussianLPF2->SetSigma(sigma2);
+
+     typename InputImageType::Pointer outputGaussian1Image = gaussianLPF1->GetOutput();
+     typename InputImageType::Pointer outputGaussian2Image = gaussianLPF2->GetOutput();
 
      //Write image to disk
-     imageWriter->SetInput(outputImage);
+     //imageWriter->SetInput(outputImage);
      imageWriter->Update();
 
   }catch(itk::ExceptionObject & err){
