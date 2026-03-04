@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <executable>
     <category>MIATT.HW04.nkrchak</category>
-    <title>SimpleThreshold_nkrchak</title>
+    <title>GaussianLPF_nkrchak</title>
     <description>
         Performs Gaussian low-pass filter on the input image
     </description>
