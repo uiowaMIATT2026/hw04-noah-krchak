@@ -40,9 +40,16 @@ int main (int argc, char * argv[])
      imageWriter->SetFileName(output);
 
      typename InputImageType::Pointer inputImage = imageReader->GetOutput();
+     typename RecursiveGaussianFilterType::Pointer gaussianLPF = RecursiveGaussianFilterType::New();
 
+     //Set input and sigma for Gaussian LPF
+     gaussianLPF->SetInput(inputImage);
+     gaussianLPF->SetSigma(sigma);
 
-     //imageWriter->SetInput(outputImage);
+     typename OutputImageType::Pointer outputImage = gaussianLPF->GetOutput();
+
+     //Write image to disk
+     imageWriter->SetInput(outputImage);
      imageWriter->Update();
 
   }catch(itk::ExceptionObject & err){
