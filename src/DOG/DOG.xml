@@ -11,42 +11,6 @@
     <contributor>Hans J. Johnson</contributor>
 
     <parameters>
-        <label>
-            Difference of Gaussians Meta Parameters
-        </label>
-        <description>
-            Parameters for changing the threshold range
-        </description>
-
-        <double>
-            <name>ts</name>
-            <longflag>ts</longflag>
-            <description>unknown</description>
-            <label>A really good label</label>
-            <default>0.0625</default>
-            <constraints>
-                <minimum>.001</minimum>
-                <maximum>1</maximum>
-                <step>.001</step>
-            </constraints>
-        </double>
-
-        <integer>
-            <name>numberOfIterations</name>
-            <longflag>iterations</longflag>
-            <description>Number of iterations</description>
-            <label>Iterations</label>
-            <default>1</default>
-            <constraints>
-                <minimum>1</minimum>
-                <maximum>30</maximum>
-                <step>1</step>
-            </constraints>
-        </integer>
-
-    </parameters>
-
-    <parameters>
         <label>IO</label>
         <description>Input/output parameters</description>
         <image>
