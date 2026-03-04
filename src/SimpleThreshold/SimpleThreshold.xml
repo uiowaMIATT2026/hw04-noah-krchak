@@ -73,6 +73,9 @@
             <name>
                 lowThreshold
             </name>
+            <longflag>
+                lowThreshold
+            </longflag>
             <label>
                 Low Threshold
             </label>
@@ -95,6 +98,9 @@
             <name>
                 highThreshold
             </name>
+            <longflag>
+                highThreshold
+            </longflag>
             <label>
                 High Threshold
             </label>
@@ -117,6 +123,9 @@
             <name>
                 outsideValue
             </name>
+            <longflag>
+                outsideValue
+            </longflag>
             <label>
                 Outside Value
             </label>
@@ -139,6 +148,9 @@
             <name>
                 insideValue
             </name>
+            <longflag>
+                insideValue
+            </longflag>
             <label>
                 Inside Value
             </label>
