@@ -18,7 +18,7 @@ using ReaderType = itk::ImageFileReader<InputImageType>;
 using WriterType = itk::ImageFileWriter<OutputImageType>;
 
 // Binary Threshold Filter Type
-using binaryThresholdImageFilterType = itk::BinaryThresholdImageFilter<InputImageType, OutputImageType>;
+using BinaryThresholdImageFilterType = itk::BinaryThresholdImageFilter<InputImageType, OutputImageType>;
 
 int main (int argc, char * argv[])
 {
@@ -39,6 +39,10 @@ int main (int argc, char * argv[])
      imageReader->SetFileName(input);
      imageWriter->SetFileName(output);
 
+     typename InputImageType::Pointer inputImage = imageReader->GetOutput();
+     typename BinaryThresholdImageFilterType::Pointer binaryThresholdFilter = BinaryThresholdImageFilterType::New();
+
+     //binaryThresholdFilter->SetLowerThreshold();
 
   }catch(itk::ExceptionObject & err){
     std::cerr << "ExceptionObject caught !" << std::endl;
