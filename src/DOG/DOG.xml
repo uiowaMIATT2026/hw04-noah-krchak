@@ -3,7 +3,7 @@
     <category>MIATT.HW04.nkrchak</category>
     <title>GaussianLPF_nkrchak</title>
     <description>
-        Performs Gaussian low-pass filter on the input image
+        Performs Difference of Gaussians on the input image using two Gaussian low-pass filters
     </description>
     <version>97.0</version>
     <documentation-url></documentation-url>
@@ -71,16 +71,16 @@
         <description>Parameters for the Gaussian low-pass filter</description>
         <double>
             <name>
-                sigma
+                sigma1
             </name>
             <longflag>
-                sigma
+                sigma1
             </longflag>
             <label>
-                Sigma
+                Sigma 1
             </label>
             <description>
-                Sigma for X, Y, and Z directions for Gaussian low-pass filter
+                Sigma for X, Y, and Z directions for first Gaussian low-pass filter
             </description>
             <default>
                 2.5
@@ -91,5 +91,27 @@
                 </minimum>
             </constraints>
         </double>
+        <double>
+            <name>
+                sigma2
+            </name>
+            <longflag>
+                sigma2
+            </longflag>
+            <label>
+                Sigma 2
+            </label>
+            <description>
+                Sigma for X, Y, and Z directions for second Gaussian low-pass filter
+            </description>
+            <default>
+                2.5
+            </default>
+            <constraints>
+                <minimum>
+                    0
+                </minimum>
+            </constraints>
+    </double>
     </parameters>
 </executable>
