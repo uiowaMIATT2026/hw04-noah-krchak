@@ -32,5 +32,18 @@ int main (int argc, char * argv[])
   std::cout << "The output volume is: " << output << std::endl;
 
 
+  try{
+     typename ReaderType::Pointer imageReader = ReaderType::New();
+     typename WriterType::Pointer imageWriter = WriterType::New();
+
+     imageReader->SetFileName(input);
+     imageWriter->SetFileName(output);
+
+
+  }catch(itk::ExceptionObject & err){
+    std::cerr << "ExceptionObject caught !" << std::endl;
+    std::cerr << err << std::endl;
+    return EXIT_FAILURE;
+  }
   return EXIT_SUCCESS;
 }
