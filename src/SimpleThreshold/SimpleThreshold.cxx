@@ -50,9 +50,11 @@ int main (int argc, char * argv[])
      binaryThresholdFilter->SetInsideValue(insideValue);
      binaryThresholdFilter->SetOutsideValue(outsideValue);
 
-      typename OutputImageType::Pointer outputImage = binaryThresholdFilter->GetOutput();
+     binaryThresholdFilter->SetInput(inputImage);
+     typename OutputImageType::Pointer outputImage = binaryThresholdFilter->GetOutput();
 
-      imageWriter->Update();
+     imageWriter->SetInput(outputImage);
+     imageWriter->Update();
 
   }catch(itk::ExceptionObject & err){
     std::cerr << "ExceptionObject caught !" << std::endl;
