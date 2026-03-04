@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+    <category>MIATT.HW04.nkrchak</category>
+    <title>GaussianLPF_nkrchak</title>
+    <description>
+        Performs Gaussian low-pass filter on the input image
+    </description>
+    <version>97.0</version>
+    <documentation-url></documentation-url>
+    <license></license>
+    <contributor>Hans J. Johnson</contributor>
+
+    <parameters>
+        <label>
+            Threshold Meta Parameters
+        </label>
+        <description>
+            Parameters for changing the threshold range
+        </description>
+
+        <double>
+            <name>ts</name>
+            <longflag>ts</longflag>
+            <description>unknown</description>
+            <label>A really good label</label>
+            <default>0.0625</default>
+            <constraints>
+                <minimum>.001</minimum>
+                <maximum>1</maximum>
+                <step>.001</step>
+            </constraints>
+        </double>
+
+        <integer>
+            <name>numberOfIterations</name>
+            <longflag>iterations</longflag>
+            <description>Number of iterations</description>
+            <label>Iterations</label>
+            <default>1</default>
+            <constraints>
+                <minimum>1</minimum>
+                <maximum>30</maximum>
+                <step>1</step>
+            </constraints>
+        </integer>
+
+    </parameters>
+
+    <parameters>
+        <label>IO</label>
+        <description>Input/output parameters</description>
+        <image>
+            <name>input</name>
+            <longflag>inputVolume</longflag>
+            <label>Input Volume</label>
+            <channel>input</channel>
+            <description>Input volume to be filtered</description>
+        </image>
+        <image>
+            <name>output</name>
+            <longflag>outputVolume</longflag>
+            <label>Output Volume</label>
+            <channel>output</channel>
+            <description>Output filtered</description>
+        </image>
+    </parameters>
+
+
+    <parameters>
+        <label>Filter Parameters</label>
+        <description>Parameters for the Gaussian low-pass filter</description>
+        <double>
+            <name>
+                sigma
+            </name>
+            <longflag>
+                sigma
+            </longflag>
+            <label>
+                Sigma
+            </label>
+            <description>
+                Sigma for X, Y, and Z directions for Gaussian low-pass filter
+            </description>
+            <default>
+                2.5
+            </default>
+            <constraints>
+                <minimum>
+                    0
+                </minimum>
+            </constraints>
+        </double>
+    </parameters>
+</executable>
