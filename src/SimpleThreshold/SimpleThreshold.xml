@@ -111,5 +111,19 @@
                 150
             </default>
         </short>
+        <short>
+            <name>
+                insideValue
+            </name>
+            <label>
+                Inside Value
+            </label>
+            <description>
+                Value to set all pixels to that are inside the threshold range
+            </description>
+            <default>
+                200
+            </default>
+        </short>
     </parameters>
 </executable>
