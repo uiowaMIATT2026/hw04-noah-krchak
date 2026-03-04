@@ -1,0 +1,1 @@
+# How does sigma affect the smoothing and loss of image resolution?
