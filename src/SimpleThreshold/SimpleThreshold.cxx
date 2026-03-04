@@ -42,7 +42,15 @@ int main (int argc, char * argv[])
      typename InputImageType::Pointer inputImage = imageReader->GetOutput();
      typename BinaryThresholdImageFilterType::Pointer binaryThresholdFilter = BinaryThresholdImageFilterType::New();
 
-     //binaryThresholdFilter->SetLowerThreshold();
+     //Set Threshold Range
+     binaryThresholdFilter->SetLowerThreshold(lowThreshold);
+     binaryThresholdFilter->SetUpperThreshold(highThreshold);
+
+     //Set Inside threshold value and outside threshold value
+     binaryThresholdFilter->SetInsideValue(insideValue);
+     binaryThresholdFilter->SetOutsideValue(outsideValue);
+
+
 
   }catch(itk::ExceptionObject & err){
     std::cerr << "ExceptionObject caught !" << std::endl;
