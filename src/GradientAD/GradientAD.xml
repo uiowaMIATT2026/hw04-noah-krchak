@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+    <category>MIATT.HW04.nkrchak</category>
+    <title>GradientAD_nkrchak</title>
+    <description>
+        Performs gradient anisotropic diffusion on the input image
+    </description>
+    <version>97.0</version>
+    <documentation-url></documentation-url>
+    <license></license>
+    <contributor>Hans J. Johnson</contributor>
+
+    <parameters>
+        <label>IO</label>
+        <description>Input/output parameters</description>
+        <image>
+            <name>input</name>
+            <longflag>inputVolume</longflag>
+            <label>Input Volume</label>
+            <channel>input</channel>
+            <description>Input volume to be filtered</description>
+        </image>
+        <image>
+            <name>output</name>
+            <longflag>outputVolume</longflag>
+            <label>Output Volume</label>
+            <channel>output</channel>
+            <description>Output filtered</description>
+        </image>
+    </parameters>
+
+
+    <parameters>
+        <label>Filter Parameters</label>
+        <description>Parameters for the gradient anisotropic diffusion filter</description>
+        <double>
+            <name>
+                sigma1
+            </name>
+            <longflag>
+                sigma1
+            </longflag>
+            <label>
+                Sigma 1
+            </label>
+            <description>
+                Sigma for X, Y, and Z directions for first Gaussian low-pass filter
+            </description>
+            <default>
+                2.5
+            </default>
+            <constraints>
+                <minimum>
+                    0
+                </minimum>
+            </constraints>
+        </double>
+        <double>
+            <name>
+                sigma2
+            </name>
+            <longflag>
+                sigma2
+            </longflag>
+            <label>
+                Sigma 2
+            </label>
+            <description>
+                Sigma for X, Y, and Z directions for second Gaussian low-pass filter
+            </description>
+            <default>
+                2.5
+            </default>
+            <constraints>
+                <minimum>
+                    0
+                </minimum>
+            </constraints>
+    </double>
+    </parameters>
+</executable>
