@@ -66,11 +66,6 @@
             <default>
                 0.1
             </default>
-            <constraints>
-                <minimum>
-                    -1
-                </minimum>
-            </constraints>
         </double>
         <integer>
             <name>
@@ -90,7 +85,7 @@
             </default>
             <constraints>
                 <minimum>
-                    0
+                    1
                 </minimum>
             </constraints>
         </integer>
