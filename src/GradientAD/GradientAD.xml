@@ -71,6 +71,28 @@
                     0
                 </minimum>
             </constraints>
-    </double>
+        </double>
+        <integer>
+            <name>
+                iterations
+            </name>
+            <longflag>
+                iterations
+            </longflag>
+            <label>
+                Iterations
+            </label>
+            <description>
+                Number of iterations for gradient anisotropic diffusion filter
+            </description>
+            <default>
+                5
+            </default>
+            <constraints>
+                <minimum>
+                    1
+                </minimum>
+            </constraints>
+        </integer>
     </parameters>
 </executable>
