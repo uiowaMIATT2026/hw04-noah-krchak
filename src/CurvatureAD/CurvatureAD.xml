@@ -32,7 +32,7 @@
 
     <parameters>
         <label>Filter Parameters</label>
-        <description>Parameters for the gradient anisotropic diffusion filter</description>
+        <description>Parameters for the curvature anisotropic diffusion filter</description>
         <double>
             <name>
                 conductance
