@@ -1,0 +1,1 @@
+# What parameters did you choose to achieve good smoothing without losing to much edge detail?
