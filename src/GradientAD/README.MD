@@ -1,1 +1,1 @@
-# How does the edge response change as sigma1 and sigma2 vary?
+# What parameters did you choose to achieve good smoothing without losing to much edge detail?
