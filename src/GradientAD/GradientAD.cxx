@@ -22,7 +22,7 @@ using ReaderType = itk::ImageFileReader<InputImageType>;
 using WriterType = itk::ImageFileWriter<OutputImageType>;
 
 // Binary Threshold Filter Type
-using GradientAnisotropicFilterType = itk::GradientAnisotropicDiffusionImageFilter<InputImageType,OutputImageType>;
+using GradientAnisotropicDiffusionFilterType = itk::GradientAnisotropicDiffusionImageFilter<InputImageType,OutputImageType>;
 
 
 int main (int argc, char * argv[])
@@ -45,9 +45,17 @@ int main (int argc, char * argv[])
      imageWriter->SetFileName(output);
 
      typename InputImageType::Pointer inputImage = imageReader->GetOutput();
-     ;
+     typename GradientAnisotropicDiffusionFilterType::Pointer gradientAD = GradientAnisotropicDiffusionFilterType::New();
+
+     gradientAD->SetInput(inputImage);
+     gradientAD->SetConductanceParameter(conductance);
+     gradientAD->SetTimeStep(timeStep);
+     gradientAD->SetNumberOfIterations(iterations);
+
+     typename OutputImageType::Pointer outputImage = gradientAD->GetOutput();
+
      //Write image to disk
-     //imageWriter->SetInput(outputImage);
+     imageWriter->SetInput(outputImage);
      imageWriter->Update();
 
   }catch(itk::ExceptionObject & err){
