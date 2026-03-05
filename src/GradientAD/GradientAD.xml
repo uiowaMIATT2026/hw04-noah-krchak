@@ -35,41 +35,36 @@
         <description>Parameters for the gradient anisotropic diffusion filter</description>
         <double>
             <name>
-                sigma1
+                conductance
             </name>
             <longflag>
-                sigma1
+                conductance
             </longflag>
             <label>
-                Sigma 1
+                Conductance
             </label>
             <description>
-                Sigma for X, Y, and Z directions for first Gaussian low-pass filter
+                Conductance for gradient anisotropic diffusion  filter
             </description>
             <default>
-                2.5
+                2.0
             </default>
-            <constraints>
-                <minimum>
-                    0
-                </minimum>
-            </constraints>
         </double>
         <double>
             <name>
-                sigma2
+                timeStep
             </name>
             <longflag>
-                sigma2
+                timeStep
             </longflag>
             <label>
-                Sigma 2
+                Time Step
             </label>
             <description>
-                Sigma for X, Y, and Z directions for second Gaussian low-pass filter
+                Time step for gradient anisotropic diffusion filter
             </description>
             <default>
-                2.5
+                0.1
             </default>
             <constraints>
                 <minimum>
