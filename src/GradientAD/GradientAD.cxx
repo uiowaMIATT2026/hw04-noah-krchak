@@ -7,8 +7,8 @@
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
 
-using InputPixelType =  short;
-using OutputPixelType = short;
+using InputPixelType =  double;
+using OutputPixelType = double;
 constexpr int Dim = 3;
 
 
