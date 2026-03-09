@@ -2,7 +2,7 @@
 
 Image used: MRHead example from Slicer
 
-CuravatureAD is also based on AnisotropicDiffusionImageFilter and AnisotropicDiffusionFunction. The discussion
+CurvatureAD is also based on AnisotropicDiffusionImageFilter and AnisotropicDiffusionFunction. The discussion
 below is a copy of the discussion in GradientAD README.MD since they use the parameters for their
 algorithms.
 
