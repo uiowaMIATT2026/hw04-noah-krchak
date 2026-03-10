@@ -51,5 +51,13 @@ Parameter set 4:
 
 Conclusion:
 
-ADD LATER
+Time step does play a bigger role in curvature AD, as shown by the difference in parameter set 2 and parameter set 4.
+When performing curvatureAD with parameter set 2 wavy texture can be seen overlaying the image and the image appears overall
+lighter, the background becomes a light gray. The same can be said for parameter set 1 and parameter set 3 
+When performing curvatureAD with parameter set 4, the wavy texture disappears
+and the background becomes the original color again which was black. When comparing parameter set 4 to parameter set 3, parameter set 3
+shows more defined edges but introduces some noise into the brain image, especially in the axial plane. Parameter set 4 removes
+this noise near completely at the cost of over smoothing the edges in the image. Parameter set 4 over smoothes the folds 
+at the center of the brain leaving it difficult to distinguish between each fold. Parameter set 3 provides the best edge 
+resolution while minimizing noise in the image.
 
