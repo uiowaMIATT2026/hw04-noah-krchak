@@ -55,18 +55,20 @@ int main (int argc, char * argv[])
      typename InputImageType::Pointer inputImage = imageReader->GetOutput();
      typename RecursiveGaussianFilterType::Pointer gaussianLPF1 = RecursiveGaussianFilterType::New();
      typename RecursiveGaussianFilterType::Pointer gaussianLPF2 = RecursiveGaussianFilterType::New();
-     //Set input and sigma for Gaussian LPF
+     //Set input and sigma for first Gaussian LPF
      gaussianLPF1->SetInput(inputImage);
      gaussianLPF1->SetSigma(sigma1);
-
+     //Set input and sigma for second Gaussian LPF
      gaussianLPF2->SetInput(inputImage);
      gaussianLPF2->SetSigma(sigma2);
 
+     //Grab output of Gaussian LPFs
      typename IntermediateImageType::Pointer outputGaussian1Image = gaussianLPF1->GetOutput();
      typename IntermediateImageType::Pointer outputGaussian2Image = gaussianLPF2->GetOutput();
 
      typename SubtractFilterType::Pointer subtractFilter = SubtractFilterType::New();
 
+     //Set input of subtract filter to output of gaussian LPFs
      subtractFilter->SetInput1(outputGaussian1Image);
      subtractFilter->SetInput2(outputGaussian2Image);
 
@@ -74,6 +76,7 @@ int main (int argc, char * argv[])
 
      typename RescaleIntensityFilterType::Pointer rescaleIntensityFilter = RescaleIntensityFilterType::New();
 
+     //Rescale intensity to match unsigned char min and max intensities (0 and 255 respectively)
      rescaleIntensityFilter->SetInput(outputDOGImage);
      rescaleIntensityFilter->SetOutputMinimum(OutputImageMin);
      rescaleIntensityFilter->SetOutputMaximum(OutputImageMax);
