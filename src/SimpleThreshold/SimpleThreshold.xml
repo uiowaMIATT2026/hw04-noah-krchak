@@ -8,7 +8,9 @@
     <version>97.0</version>
     <documentation-url></documentation-url>
     <license></license>
+    <contributor>Noah Krchak</contributor>
     <contributor>Hans J. Johnson</contributor>
+    <acknowledgements>Hans J. Johnson provided starter code and XML file for SimpleThreshold</acknowledgements>
 
     <parameters>
         <label>IO</label>
