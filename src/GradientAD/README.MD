@@ -47,8 +47,8 @@ Parameter set 4:
 
 Conclusion:
 
-I see no visible difference between a time step of 0.125 and 0.0625 in the image. Which leaves conductance as the only
-parameter difference between the 4 sets. When conductance is set to 2 the image becomes much smoother but loses
+I see a slight difference between a time step of 0.125 and 0.0625 in the image, but this difference isn't as significant as conductance. 
+Which leaves conductance as the only parameter difference between the 4 sets. When conductance is set to 2 the image becomes much smoother but loses
 some inner edges inside the brain and edge detail near the skull in the axial plane. When conductance is set to 0.5
 the image is smoothed slightly while most edges are kept in all 3 planes. The best set of parameters from the four sets above
 is either parameter set 1 or parameter set 3 on the MRHead set.
