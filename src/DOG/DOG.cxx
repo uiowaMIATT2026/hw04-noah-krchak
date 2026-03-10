@@ -24,7 +24,7 @@ using OutputImageType = itk::Image<OutputPixelType, Dim>;
 using ReaderType = itk::ImageFileReader<InputImageType>;
 using WriterType = itk::ImageFileWriter<OutputImageType>;
 
-// Binary Threshold Filter Type
+// Recursive Gaussian Type, Subtract Filter Type and Rescale Intensity Type for Difference of Gaussians (DOG)
 using RecursiveGaussianFilterType = itk::RecursiveGaussianImageFilter<InputImageType, IntermediateImageType>;
 using SubtractFilterType = itk::SubtractImageFilter<IntermediateImageType , IntermediateImageType>;
 using RescaleIntensityFilterType = itk::RescaleIntensityImageFilter<IntermediateImageType, OutputImageType>;
