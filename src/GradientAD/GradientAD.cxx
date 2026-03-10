@@ -18,7 +18,7 @@ using OutputImageType = itk::Image<OutputPixelType, Dim>;
 using ReaderType = itk::ImageFileReader<InputImageType>;
 using WriterType = itk::ImageFileWriter<OutputImageType>;
 
-// Binary Threshold Filter Type
+// Gradient Anisotropic Filter Type
 using GradientAnisotropicDiffusionFilterType = itk::GradientAnisotropicDiffusionImageFilter<InputImageType,OutputImageType>;
 
 
