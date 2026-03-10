@@ -14,7 +14,7 @@ using OutputImageType = itk::Image<PixelType, Dim>;
 using ReaderType = itk::ImageFileReader<InputImageType>;
 using WriterType = itk::ImageFileWriter<OutputImageType>;
 
-// Binary Threshold Filter Type
+// Recursive Gaussian Filter Type
 using RecursiveGaussianFilterType = itk::RecursiveGaussianImageFilter<InputImageType, OutputImageType>;
 
 int main (int argc, char * argv[])
