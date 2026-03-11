@@ -71,7 +71,7 @@
                 Sigma for X, Y, and Z directions for second Gaussian low-pass filter
             </description>
             <default>
-                2.5
+                3.5
             </default>
             <constraints>
                 <minimum>
