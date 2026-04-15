@@ -52,9 +52,18 @@
                 2.5
             </default>
             <constraints>
+                <!-->Sigma for Gaussian LPF is in terms of mm so 5 mm LPF is large and values higher than 5 could lead to heavy blurring <-->
+                <!--> Although 0.1 is rather low for sigma in a Gaussian LPF it is chosen to allow the user the ability to explore if a sigma value lower than 0.5 works for their dataset <-->
+                <!--> Step size is 0.1 to match the magnitude of the minimum <-->
                 <minimum>
-                    0
+                    0.1
                 </minimum>
+                <step>
+                    0.1
+                </step>
+                <maximum>
+                    5.0
+                </maximum>
             </constraints>
         </double>
     </parameters>
