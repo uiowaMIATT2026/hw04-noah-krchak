@@ -6,7 +6,7 @@
 #include "itkBinaryThresholdImageFilter.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
-using PixelType =  short;
+using PixelType =  signed short; // This is pixel type was chosen based on the README.md specifying that the input image was signed short data type
 constexpr int Dim = 3;
 
 // I/O Image Types
@@ -40,13 +40,14 @@ int main (int argc, char * argv[])
      typename InputImageType::Pointer inputImage = imageReader->GetOutput();
      typename BinaryThresholdImageFilterType::Pointer binaryThresholdFilter = BinaryThresholdImageFilterType::New();
 
+     // Explicitly casting SEM parameters from integer type to the PixelType to avoid warning about implicit conversion
      //Set Threshold Range
-     binaryThresholdFilter->SetLowerThreshold(lowThreshold);
-     binaryThresholdFilter->SetUpperThreshold(highThreshold);
+     binaryThresholdFilter->SetLowerThreshold(static_cast<PixelType>(lowThreshold));
+     binaryThresholdFilter->SetUpperThreshold(static_cast<PixelType>(highThreshold));
 
      //Set Inside threshold value and outside threshold value
-     binaryThresholdFilter->SetInsideValue(insideValue);
-     binaryThresholdFilter->SetOutsideValue(outsideValue);
+     binaryThresholdFilter->SetInsideValue(static_cast<PixelType>(insideValue));
+     binaryThresholdFilter->SetOutsideValue(static_cast<PixelType>(outsideValue));
 
      binaryThresholdFilter->SetInput(inputImage);
      typename OutputImageType::Pointer outputImage = binaryThresholdFilter->GetOutput();
