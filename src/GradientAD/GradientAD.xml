@@ -51,6 +51,17 @@
             <default>
                 2.0
             </default>
+            <constraints>
+                <minimum><!-->Although conductance can be set to 0, it is very rare for the user to need that capability, so 0.1 is the minimum conductance for this application<-->
+                    0.1
+                </minimum>
+                <step> <!-->Fine-grain step size for choosing the conductance<-->
+                    0.1
+                </step>
+                <maximum> <!-->5.0 is a very high conductance value. This is mainly used for images with heavy noise but it can make smaller structures disappear due to smoothing<-->
+                    5.0
+                </maximum>
+            </constraints>
         </double>
         <double>
             <name>
@@ -68,6 +79,20 @@
             <default>
                 0.1
             </default>
+            <constraints>
+                <!-->Stable time step is determine by 0.5/2^N equation where N is the number of dimensions<-->
+                <!-->For a 2-d image this maximum is already 0.125 so there isn't a need to have the maximum beyond 0.13<-->
+                <!--> Step size is 0.01 for ease of use, and the minimum is 0.01 to match the step size magnitude <-->
+                <minimum>
+                    0.01
+                </minimum>
+                <step>
+                    0.01
+                </step>
+                <maximum>
+                    0.13
+                </maximum>
+            </constraints>
         </double>
         <integer>
             <name>
@@ -86,9 +111,15 @@
                 5
             </default>
             <constraints>
-                <minimum>
+                <minimum><!-->The true minimum number of iterations, if the iterations is set to 0 the algorithm would do "nothing"<-->
                     1
                 </minimum>
+                <step><!-->Allows the user to tune the number of iterations in a fine-grain matter. This is the smallest integer step-size<-->
+                    1
+                </step>
+                <maximum><!-->20 iterations is a high number of iterations for curvature anisotropic diffusion, but could be needed in some cases. Anything beyond 20 is seen as detrimental to the algorithm<-->
+                    20
+                </maximum>
             </constraints>
         </integer>
     </parameters>
