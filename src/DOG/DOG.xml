@@ -5,7 +5,7 @@
     <description>
         Performs Difference of Gaussians on the input image using two Gaussian low-pass filters
     </description>
-    <version>97.0</version>
+    <version>1.0</version>
     <documentation-url></documentation-url>
     <license></license>
     <contributor>Noah Krchak</contributor>
