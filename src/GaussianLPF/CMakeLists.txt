@@ -33,3 +33,43 @@ add_test(NAME GaussianLPF_MissingInput
     --outputVolume ${CMAKE_CURRENT_BINARY_DIR}/GaussianLPF_missing_out.nii.gz
 )
 set_tests_properties(GaussianLPF_MissingInput PROPERTIES WILL_FAIL TRUE)
+
+# --- Edge-case tests ---
+
+# ITK's RecursiveGaussianImageFilter requires sigma > 0 and explicitly throws
+# "Sigma must be greater than zero" for negative values, so EXIT_FAILURE is expected
+add_test(NAME GaussianLPF_NegativeSigma
+  COMMAND $<TARGET_FILE:GaussianLPF_${MYHAWKID}>
+    --inputVolume ${DATA}/noisy/T1_icbm_normal_1mm_pn3_rf40.nii
+    --sigma -1.0
+    --outputVolume ${CMAKE_CURRENT_BINARY_DIR}/GaussianLPF_neg_sigma_out.nii.gz
+)
+set_tests_properties(GaussianLPF_NegativeSigma PROPERTIES WILL_FAIL TRUE)
+
+# Zero sigma is also rejected by ITK with the same "Sigma must be greater than zero"
+# exception, so EXIT_FAILURE is expected
+add_test(NAME GaussianLPF_ZeroSigma
+  COMMAND $<TARGET_FILE:GaussianLPF_${MYHAWKID}>
+    --inputVolume ${DATA}/noisy/T1_icbm_normal_1mm_pn3_rf40.nii
+    --sigma 0.0
+    --outputVolume ${CMAKE_CURRENT_BINARY_DIR}/GaussianLPF_zero_sigma_out.nii.gz
+)
+set_tests_properties(GaussianLPF_ZeroSigma PROPERTIES WILL_FAIL TRUE)
+
+# sigma=0.1 is the minimum value allowed by the XML constraints; the filter should
+# apply very light smoothing and EXIT_SUCCESS
+add_test(NAME GaussianLPF_BoundaryMinSigma
+  COMMAND $<TARGET_FILE:GaussianLPF_${MYHAWKID}>
+    --inputVolume ${DATA}/noisy/T1_icbm_normal_1mm_pn3_rf40.nii
+    --sigma 0.1
+    --outputVolume ${CMAKE_CURRENT_BINARY_DIR}/GaussianLPF_min_sigma_out.nii.gz
+)
+
+# sigma=5.0 is the maximum value allowed by the XML constraints; the filter should
+# apply heavy smoothing across the volume and EXIT_SUCCESS
+add_test(NAME GaussianLPF_BoundaryMaxSigma
+  COMMAND $<TARGET_FILE:GaussianLPF_${MYHAWKID}>
+    --inputVolume ${DATA}/noisy/T1_icbm_normal_1mm_pn3_rf40.nii
+    --sigma 5.0
+    --outputVolume ${CMAKE_CURRENT_BINARY_DIR}/GaussianLPF_max_sigma_out.nii.gz
+)
