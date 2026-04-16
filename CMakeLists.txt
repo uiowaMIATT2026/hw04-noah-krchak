@@ -33,4 +33,5 @@ include(${SlicerExecutionModel_CMAKE_DIR}/SEMMacroBuildCLI.cmake)
 
 set(MYHAWKID "nkrchak") # <----- YOU MUST CHANGE THIS!
 
+enable_testing()
 add_subdirectory(src)
